@@ -13,10 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'qingyun'
 api = Api(app)
 
-# create tables for db in the very first place, if it can see the tabls in models
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 
 jwt = JWT(app, authenticate, identity)
